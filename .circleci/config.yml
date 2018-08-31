@@ -65,7 +65,7 @@ markJobFinishesOnGCS: &markJobFinishesOnGCS
       bin/ci2gubernator.sh --exit_code=$(cat exit_code) --junit_xml=/go/out/tests/junit.xml
 
 jobs:
-  codecov:
+  build:
     <<: *defaults
     resource_class: xlarge
     environment:
