@@ -103,10 +103,3 @@ if [[ -n ${FAILED_TESTS:-} ]]; then
 fi
 
 
-
-echo 'Checking package coverage'
-go get -u istio.io/test-infra/toolbox/pkg_check
-pkg_check \
-  --report_file="${FINAL_CODECOV_DIR}/codecov.report" \
-  --alsologtostderr \
-  --requirement_file=codecov.requirement "${PKG_CHECK_ARGS[@]}"
