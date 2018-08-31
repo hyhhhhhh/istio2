@@ -389,6 +389,7 @@ jobs:
             make localTestEnv
             set -o pipefail
             make -k pilot-racetest mixer-racetest security-racetest T=-v | tee -a /go/out/tests/build-log.txt
+            echo
       - <<: *recordZeroExitCodeIfTestPassed
       - <<: *recordNonzeroExitCodeIfTestFailed
       - <<: *markJobFinishesOnGCS
