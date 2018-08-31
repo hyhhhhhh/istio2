@@ -348,6 +348,11 @@ jobs:
           name: Uploading code coverage to codecov.io
           when: always
           command: bash <(curl -s https://codecov.io/bash) -f /go/out/codecov/coverage.cov
+      - run:
+          name: test
+          command: |
+            cd /go/out/codecov
+            cat coverage.cov
       - store_artifacts:
           path: /go/out/codecov
 
