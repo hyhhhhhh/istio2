@@ -87,6 +87,7 @@ jobs:
           name: test
           command: |
             cd /go/out/codecov
-            cat coverage.cov
+            go tool cover -html=coverage.cov -o coverage.html
+            cat coverage.html
       - store_artifacts:
           path: /go/out/codecov
